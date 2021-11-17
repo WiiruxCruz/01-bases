@@ -3,18 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ContadorComponent } from './contador/contador.component';
+import { ContadorModule } from './contador/contador.module';
 import { HeroesModule } from './heroes/heroes.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ContadorComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HeroesModule
+    HeroesModule,
+    ContadorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
