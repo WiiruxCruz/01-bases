@@ -3,47 +3,14 @@
 
 <div class="row">
 	<div class="col">
-		<ul>
-      <li *ngFor="let personaje of personajes">{{personaje.nombre}} - {{personaje.poder | number}}</li>
-		</ul>
+    <!--<app-personajes [data]="personajes"></app-personajes>-->
+    <app-personajes [personajes]="personajes"></app-personajes>
 	</div>
 
   <div class="col">
-    <h3>Agregar  <small>{{ nuevo.nombre }}</small></h3>
-    <hr>
-
-    <form (ngSubmit)="agregar()">
-      <!--
-        [propiedad de html] <-- indica el valor que debe tomar
-        (evento) <-- escucha evento y ejecuta funcion
-        [(ngModel)] <-- indica el valor que debe tomar y actualiza los cambios de este elemento HTML al modelo de datos
-      <input
-        type="text"
-        placeholder="Nombre"
-        [value]="nuevo.nombre"
-        (input)="cambiarNombre( $event )"
-      />
-      -->
-
-      <input
-        type="text"
-        placeholder="Nombre"
-        name="nombre"
-        [(ngModel)]="nuevo.nombre"
-      />
-
-
-      <input
-        type="number"
-        placeholder="Poder"
-        name="poder"
-        [(ngModel)]="nuevo.poder"
-      />
-
-      <button type="submit">
-        Agregar
-      </button>
-
-    </form>
+    <app-agregar
+      [personajes]="personajes"
+      [nuevo]="nuevo"
+    ></app-agregar>
   </div>
 </div>
