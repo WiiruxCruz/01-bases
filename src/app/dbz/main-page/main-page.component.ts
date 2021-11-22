@@ -1,6 +1,7 @@
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Component } from '@angular/core';
 import { Personaje } from '../interfaces/dbz.interface';
+import { DbzService } from '../services/dbz.services';
 
 @Component({
   selector: 'app-main-page',
@@ -25,5 +26,10 @@ export class MainPageComponent {
   agregarNuevoPersonaje(argumento: Personaje) {
     console.log(argumento);
     this.personajes.push(argumento);
+  }
+
+  //injeccion de dependencias
+  constructor( private DbzService: DbzService) {
+
   }
 }
